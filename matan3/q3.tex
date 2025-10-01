@@ -1,0 +1,48 @@
+\section{Признаки Даламбера и Коши, их сравнение}
+
+\begin{theorem}
+	(\textbf{признак Коши}) \begin{enumerate}
+		\item Если для всех номеров $k$, с некоторого номера $k_0$, справедливо неравенство
+		
+		\begin{equation}
+			\sqrt[k]{p_k} \leqslant q < 1\quad (\sqrt[k]{p_k} \geqslant 1),\quad k \geqslant k_0 \geqslant 1
+		\end{equation}
+		
+		то ряд (3) сходится (расходится)
+		
+		\item Если существует предел
+		
+		\begin{equation}
+			\displaystyle\lim_{k\rightarrow \infty} \sqrt[k]{p_k} = L
+		\end{equation}
+		
+		то при $L < 1$ ряд сходится, а при $L > 1$ - расходится.
+	\end{enumerate}
+\end{theorem}
+
+\textbf{Доказательство}
+
+\begin{enumerate}
+	\item Возведём в $k$-ю степень обе части неравенства (8) $\sqrt[k]{p_k} \geqslant 1$, получим неравенство $p_k \geqslant 1, k \geqslant k_0$, то есть общий член ряда (3) не стремится к нулю при $k \rightarrow \infty$ и ряд расходится (нарушено необходимое условие сходимости ряда). Возведём в $k$-ю степень обе части первого неравенства (8) $\sqrt[k]{p_k} \leqslant q$, получим неравенство $p_k \leqslant q^k, k \geqslant k_0$. Поскольку ряд с общим членом $p_k' = q^k, 0 < q < 1$, сходится, то по первому признаку сравнения (теорема 3) ряд (3) сходится.
+	
+	\item Из существования предела (9) следует, что
+	
+	\begin{equation*}
+		\forall\varepsilon > 0\ \exists N\in \mathbb{N}: \forall k \geqslant N\ |\sqrt[k]{p_k} - L| < \varepsilon
+	\end{equation*}
+	
+	или
+	
+	\begin{equation}
+		L - \varepsilon < \sqrt[k]{p_k} < L + \varepsilon
+	\end{equation}
+	
+	Если $L < 1$, то выбирая $\varepsilon$ так, что $L + \varepsilon < 1$, и обозначая $q = L + \varepsilon$, получаем из правого неравенства (10): $\sqrt[k]{p_k} < q < 1$, откуда, согласно первой части теоремы, заключаем, что ряд (3) сходится. Если $L > 1$, то выбирая $\varepsilon$ так, что $L - \varepsilon = 1$, получаем из левого неравенства (10): $\sqrt[k]{p_k} > 1$, из чего, согласно первой части теоремы, заключаем, что ряд (3) расходится. Заметим, что если $L = \infty$, то рассуждения аналогичны ($\sqrt[k]{p_k} > 1, k \geqslant k_0 \geqslant 1$). Теорема доказана.
+	\begin{flushright}
+		$\blacksquare$
+	\end{flushright}
+\end{enumerate}
+
+\begin{note}
+	По существу, строгое отделение от 1 в первом неравенстве (8) 
+\end{note}

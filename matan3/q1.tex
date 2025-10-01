@@ -1,0 +1,133 @@
+\section{Понятие числового ряда. Критерий Коши. Необходимое и достаточное условие сходимости рядов с неотрицательными членами}
+
+Рассмотрим числовую последовательность $\{u_k\}_{k=1}^\infty$, формально просуммируем все её члены
+
+\begin{equation}
+	u_1 + u_2 + ... + u_k \equiv \displaystyle\sum_{k = 1}^\infty u_k
+\end{equation}
+
+полученное выражение назовём числовым рядом, в котором $u_k$ - общий член ряда, знак $\Sigma$ означает сумму; сумму первых $n$ слагаемых, $S_n = \displaystyle_{k = 1}^n u_k$ назовём $n$-й суммой ряда (1).
+
+\begin{definition}
+	Ряд (1) называется сходящимся, если сходится последовательность $\{S_n\}$ частичных сумм этого ряда.
+\end{definition}
+
+Предел $S$ последовательности $\{S_n\}$ называется суммой этого ряда. Для сходящегося ряда можно формально записать
+
+\begin{equation*}
+	S = \displaystyle\sum_{k  = 1}^\infty u_k
+\end{equation*}
+
+выражение
+
+\begin{equation*}
+	S - S_n = \displaystyle\sum_{k = n + 1}^\infty u_k \equiv r_n
+\end{equation*}
+
+называется $n$-м остатком ряда. Из определения предела последовательности получаем, что
+
+\begin{equation*}
+	\exists S: \forall\varepsilon > 0\: \exists N > 0: \forall n \geqslant N\quad |S_n - S| = |r_n| < \varepsilon
+\end{equation*}
+
+т.е. $r_n = o(1)$, остаток сходящегося ряда является бесконечно малой величиной.
+
+Если конечного предела последовательности $\{S_n\}$ не существует, то ряд называется расходящимся. Формально это можно записать как
+
+\begin{equation*}
+	\forall S \: \exists\varepsilon > 0: \forall N \: \exists n \geqslant N: |S_n - S| = |r_n| \geqslant \varepsilon
+\end{equation*}
+
+\textbf{Критерий Коши}
+
+\begin{theorem}
+	(\textbf{критерий Коши}) Для того чтобы последовательность $\{S_n\}$ была сходящейся, необходимо и достаточно, чтобы
+	
+	\begin{equation*}
+		\forall\varepsilon > 0 \: \exists N: \: \forall n \geqslant N \: \forall p \in \mathbb{N} \quad |S_{n + p} - S_n| < \varepsilon
+	\end{equation*}
+	
+	Если $\{S_n\}$ - последовательность частичных сумм ряда (1), то
+	
+	\begin{equation*}
+		S_{n + p} - S_n = \displaystyle\sum_{k = n + 1}^{n + p} u_k
+	\end{equation*}
+	
+	поэтому следующее утверждение получаем как следствие из предыдущего утверждения
+\end{theorem}
+
+\begin{theorem}
+	(\textbf{критерий Коши для ряда}) Для того чтобы ряд (1) сходился, необходимо и достаточно, чтобы
+	
+	\begin{equation}
+		\forall\varepsilon > 0 \ \exists N: \forall n \geqslant N \ \forall p \in\mathbb{N} \quad \left|\displaystyle\sum_{k = n + 1}^{n + p} u_k \right| < \varepsilon
+	\end{equation}
+\end{theorem}
+
+\begin{follows}
+	(\textbf{необходимое условие сходимости ряда}) Для сходимости ряда (1) необходимо, чтобы последовательность $\{u_k\}$ членов этого ряда была бесконечно малой, т.е. $u_k = o(1),\ k\rightarrow\infty$.
+\end{follows}
+
+\textbf{Доказательство}
+
+Для доказательства этого утверждения достаточно заметить, что согласно теореме 2
+
+\begin{equation*}
+	\forall\varepsilon > 0 \ \exists N_0: \forall n \geqslant N_0 \ \forall p \in \mathbb{N} \quad \left| \displaystyle\sum_{k = n + 1}^{n + p} u_k \right| < \varepsilon
+\end{equation*}
+
+При $p = 1$ соотношение принимает вид $|u_{n + 1}|$ < $\varepsilon$. Положив $N = N_0 + 1$, получим, что
+
+\begin{equation*}
+	\forall\varepsilon > 0 \ \exists N\in\mathbb{N}: \forall n \geqslant N \quad |u_n| < \varepsilon
+\end{equation*}
+
+т.е. $u_k \rightarrow 0, k \rightarrow\infty$, что и требовалось доказать.
+
+\textbf{Примеры рядов, для которых не выполняется необходимое условие сходимости ряда}
+
+\begin{equation*}
+	\displaystyle\sum_{k = 1}^\infty (-1)^k, \ \displaystyle\sum_{k = 1}^\infty (-1)^kk, \ \displaystyle\sum_{k = 1}^\infty \frac{2k^3}{3k^3 + k^2}
+\end{equation*}
+
+Таким образом, каждый из этих рядов расходится.
+
+Стремление к нулю общего члена ряда является лишь необходимым, но не достаточным условием сходимости ряда. Например, рассмотрим гармонический ряд
+
+\begin{equation*}
+	1 + \frac{1}{2} + \frac{1}{3} + ... = \displaystyle\sum_{k = 1}^\infty \frac{1}{k}
+\end{equation*}
+
+Докажем, что гармонический ряд - расходящийся. Воспользуемся критерием Коши
+
+\begin{equation*}
+	\exists\varepsilon > 0: \quad \forall N\in\mathbb{N} \ \exists n \geqslant N, \ \exists p \in\mathbb{N}: \quad \left| \displaystyle\sum_{k = n + 1}^{n + p} u_k \right| \geqslant \varepsilon
+\end{equation*}
+
+В последней сумме $p$ слагаемых. Для всех $k \leqslant n + p$ выполнено неравенство $\frac{1}{k} \geqslant \frac{1}{n + p}$, положим $p = n$
+
+\begin{equation*}
+	\displaystyle\sum_{k = n + 1}^{n + p} \frac{1}{k} \geqslant \frac{1}{n + p} \cdot p \Bigl|_{p = n} = \frac{n}{2n} = \frac{1}{2}
+\end{equation*}
+
+Итак,
+
+\begin{equation*}
+	\forall\varepsilon \in \Bigl( 0, \frac{1}{2} \Bigr],\ \forall N \in \mathbb{N} \ \exists n\geqslant N, \ \exists p = n: \quad \left| \displaystyle\sum_{k = n + 1}^{n + p} u_k \right| \geqslant \varepsilon
+\end{equation*}
+
+То есть, согласно теореме 2, гармонический ряд расходится. Заметим, что в этом случае в качестве $n$ можно взять любое натуральное число, большее или равное $N$, а в качестве $\varepsilon$ - любое число из полуинтервала $(0, \frac{1}{2}]$.
+
+\begin{note}
+	Отбрасывание или добавление конечного числа членов ряда не влияет на сходимость или расходимость ряда, это следует из критерия Коши, так как для больших $n$ разность $S_{n + p} - S_n$ не изменится.
+\end{note}
+
+\begin{note}
+	Если постоянная $c$ отлична от нуля, то ряды
+	
+	\begin{equation*}
+		\displaystyle\sum_{k = 1}^\infty (cu_k) \ \mbox{и} \ \displaystyle\sum_{k = 1}^\infty u_k
+	\end{equation*}
+	
+	сходятся или расходятся одновременно, так как последовательность $\{cS_n\}$ сходится тогда и только тогда, когда сходится последовательность $\{S_n\}$, это также можно вывести из критерия Коши.
+\end{note}
