@@ -1,0 +1,86 @@
+\documentclass[openany]{book}
+
+\usepackage{tikz}
+\usepackage{tkz-euclide}
+\usepackage{nicematrix}
+\usepackage{geometry,setspace}
+\usepackage[utf8x]{inputenc}
+\usepackage[rus
+sian,english]{babel}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{import}
+\usepackage{amsmath, amssymb}
+\usepackage{fancybox, fancyhdr}
+\usepackage{graphicx}
+\usepackage{blindtext}
+\usepackage{ragged2e}
+
+\renewcommand*{\thesection}{\arabic{section}}
+\newtheorem{theorem}{Теорема}
+\newtheorem{definition}{Определение}
+\newtheorem{follows}{Следствие}
+\newtheorem{lemm}{Лемма}
+\newtheorem{note}{Замечание}
+\newtheorem{statm}{Утверждение}
+\newtheorem{exmpl}{Пример}
+
+\hypersetup{  
+	colorlinks=true,
+	linkcolor=blue,
+	filecolor=magenta,       
+	urlcolor=cyan, 
+	pdftitle={Билеты к коллоквиуму по МА3},
+	pdfpagemode=FullScreen,
+}
+
+\begin{document}
+	\selectlanguage{Russian}
+	
+	
+	\begin{titlepage}
+		\centering
+		
+		\vspace*{2cm}
+		
+		{\Huge\bfseries Коллоквиум по}
+		{\Huge\bfseries математическому анализу III}
+		
+		{\Huge\bfseries Второй поток}
+		
+		\vspace*{2.2cm}
+		
+		\includegraphics[width=0.6\textwidth]{logo.png}
+	\end{titlepage}
+	\clearpage
+	\hypertarget{intro}{}
+	\tableofcontents
+	\clearpage
+	
+	\pagestyle{fancy}
+	\setcounter{page}{1}
+	\fancyhf{}
+	\fancyhead[LE]{\thepage}
+	\fancyhead[RO]{\thepage}
+	\fancyhead[LO]{\hyperlink{intro}{Назад к оглавлению}}
+	\fancyhead[RE]{\hyperlink{intro}{Назад к оглавлению}}
+	
+	\import{./}{q1.tex}
+	\section*{Признаки сходимости рядов с неотрицательными членами}
+	\import{./}{q2.tex}
+	\import{./}{q3.tex}
+	\import{./}{q4.tex}
+	\newpage
+	\import{./}{q5.tex}
+	\import{./}{q6.tex}
+	\import{./}{q7.tex}
+	\import{./}{q8.tex}
+	\import{./}{q9.tex}
+	\import{./}{q10.tex}   
+	\import{./}{q11.tex}
+	\import{./}{q12.tex}
+	\import{./}{q13.tex}
+	\import{./}{q14.tex}
+	\import{./}{q15.tex}
+	
+\end{document}
