@@ -1,0 +1,101 @@
+\section{Метод Пуассона-Абеля суммирования расходящихся рядов}
+
+Для того, чтобы улучшить сходимость ряда (52), умножим общий член ряда на бесконечно малую последовательность, но так, чтобы в пределе снова получить $u_k$.
+
+Для этого рассмотрим метод Пуассона-Абеля. Рассмотрим для каждого значения $x \in (0, 1)$ ряд
+
+\begin{equation}
+	\displaystyle\sum_{k = 1}^\infty u_kx^{k - 1} = u_1 + u_2x + u_3x^2 + ... + u_kx^{k - 1} + ...
+\end{equation}
+
+Если этот ряд сходится для каждого $x$ из интервала $(0, 1)$ и если сумма $S(x)$ этого ряда имеет левое предельное значение в точке $x = 1$, то есть существует предел $\displaystyle\lim_{x \rightarrow 1 - 0} S(x) = S$, то говорят, что ряд (52) суммируем методом Пуассона-Абеля. При этом число $S$ называется суммой ряда (52) в смысле Пуассона-Абеля.
+
+Линейность метода Пуассона-Абеля очевидна. Действительно, обозначим сумму ряда (58)  и обобщённую в смысле Пуассона-Абеля сумму ряда (52) соответственно через $U(x), U$, те же величины для ряда (53) через $V(x), V$. Тогда для любых чисел $\alpha, \beta \in \mathbb{R}$ справедливо соотношение
+
+\begin{equation*}
+	\displaystyle\sum_{k = 1}^\infty (\alpha u_k + \beta v_k)x^{k - 1} = \alpha \displaystyle\sum_{k = 1}^\infty u_k x^{k - 1} + \beta\displaystyle\sum_{k = 1}^\infty v_kx^{k - 1} = \alpha U(x) + \beta V(x) \rightarrow \alpha U + \beta V\quad \mbox{при} \quad x \rightarrow 1 - 0
+\end{equation*}
+
+Докажем регулярность этого метода. Пусть ряд (52) сходится в обычном смысле и имеет сумму $S$. Требуется доказать, что ряд (58) сходится для каждого $x \in (0, 1)$ и сумма $S(x)$  ряда (58) имеет в точке $x = 1$ левое предельное значение, равное $S$.
+
+Так как ряд (52) сходится, то последовательность его членов бесконечно малая и, следовательно, ограниченная, то есть найдётся такое число $M$, что $|u_k| \leqslant M$ для всех номеров $k$. Используя это неравенство, оценим модуль $k$-го члена ряда (58). Получим
+
+\begin{equation*}
+	|u_k x^{k - 1}| \leqslant Mx^{k - 1},\quad x\in (0, 1)
+\end{equation*}
+
+Так как ряд с общим членом $x^{k - 1}$ при $x \in (0, 1)$ сходится, то по первому признаку сравнения сходится и ряд (58). Обозначим его сумму через $S(x)$.
+
+Обозначим $n$-ю частичную сумму ряда (52) через $S_n$, обычную сумму этого ряда через $S$ и через $r_n = S - S_n$ - $n$-й остаток этого ряда. Для получения удобного для дальнейших преобразований представления суммы $S(x)$ применим тождество Абеля
+
+\begin{equation*}
+	\displaystyle\sum_{k = n}^{n + p} u_kv_k = \displaystyle\sum_{k = n}^{n + p - 1} S_k(v_k - v_{k + 1}) + S_{n + p}v_{n + p} - S_{n - 1}v_n
+\end{equation*}
+
+Положим в этом тождестве $n = 1, v_k = x^{k - 1}, S_0 = 0$ и устремим $p$ к бесконечности. Получим
+
+\begin{equation*}
+	\displaystyle\sum_{k = 1}^\infty u_kx^{k - 1} = (1 - x)\displaystyle\sum_{k = 1}^\infty S_kx^{k - 1}
+\end{equation*}
+
+Вычтем это тождество из очевидного тождества
+
+\begin{equation*}
+	S = (1 - x)\displaystyle\sum_{k = 1}^\infty Sx^{k - 1}
+\end{equation*}
+
+Имеем
+
+\begin{equation*}
+	S - \displaystyle\sum_{k = 1}^\infty u_kx^{k - 1} = (1 - x)\displaystyle\sum_{k = 1}^\infty Sx^{k - 1} - (1 - x)\displaystyle\sum_{k = 1}^\infty S_kx^{k - 1} = (1 - x)\displaystyle\sum_{k = 1}^\infty r_kx^{k - 1}
+\end{equation*}
+
+или
+
+\begin{equation}
+	S - S(x) = (1 - x)\displaystyle\sum_{k = 1}^\infty r_kx^{k - 1}
+\end{equation}
+
+Докажем, что
+
+\begin{equation}
+	\forall \varepsilon > 0\ \exists \delta > 0\colon |S - S(x)| < \varepsilon\ \forall x \in (1 - \delta, 1)
+\end{equation}
+
+Так как остаток $r_k$ ряда (52) стремится к нулю при $k \rightarrow \infty$, то
+
+\begin{equation*}
+	\forall \varepsilon > 0\ \exists k_0 \in \mathbb{N}\colon \forall k \geqslant k_0\ |r_k| < \frac{\varepsilon}{2}
+\end{equation*}
+
+Оценим остаток ряда (59)
+
+\begin{equation*}
+	\left| (1-x)\displaystyle\sum_{k = k_0}^\infty r_k x^{k - 1} \right| < \frac{\varepsilon}{2}(1 - x)\displaystyle\sum_{k = k_0}^\infty x^{k - 1} < \frac{\varepsilon}{2}(1 - x)\displaystyle\sum_{k = 1}^\infty x^{k - 1} = \frac{\varepsilon}{2} \cdot \frac{1 - x}{1 - x} = \frac{\varepsilon}{2} \quad \forall x \in (0, 1)
+\end{equation*}
+
+Оценим оставшуюся часть ряда (59). Обозначим $c = \displaystyle\sum_{k = 1}^{k_0 - 1} |r_k|$ и рассмотрим {\small $1 - \frac{\varepsilon}{2c}, x < 1$}. Тогда
+
+\begin{equation*}
+	\left| (1 - x)\displaystyle\sum_{k = 1}^{k_0 - 1} r_kx^{k - 1} \right| \leqslant (1 - x)\displaystyle\sum_{k = 1}^{k_0 - 1} |r_k| = c(1 - x) < \frac{\varepsilon}{2}
+\end{equation*}
+
+Подставив полученные оценки в (59), устанавливаем справедливость утверждения (60): $\exists \displaystyle\lim_{x \rightarrow 1 - 0} S(x) = S$. Таким образом, метод суммирования Пуассона-Абеля является регулярным.
+
+\textbf{Пример}
+
+Применим метод суммирования Пуассона-Абеля к уже рассмотренному в предыдущем пункте расходящемуся ряду
+
+\begin{equation}
+	\displaystyle\sum_{k = 1}^\infty (-1)^{k - 1} = 1 - 1 + 1 - 1 + ...
+\end{equation}
+
+Сумму соответствующего ему ряда (58) найдём как сумму бесконечно убывающей геометрической прогрессии
+
+\begin{equation*}
+	S(x) = \displaystyle\sum_{k = 1}^\infty (-1)^{k - 1}x^{k - 1} = 1 - x + x^2 - x^3 + ... = \frac{1}{1 + x}\quad \forall x \in (0, 1)
+\end{equation*}
+
+Так как существует предел $\displaystyle\lim_{x \rightarrow 1 - 0} S(x) = \displaystyle\lim_{x \rightarrow 1 - 0} \frac{1}{1 + x} = \frac{1}{2}$, то ряд () суммируем методом Пуассона-Абеля и его сумма в смысле Пуассона-Абеля равна $\frac{1}{2}$.
+
+Можно доказать, что если ряд суммируем методом Чезаро, то он суммируем и методом Пуассона-Абеля и его обобщённые суммы совпадают. При этом существуют ряды, суммируемые методом Пуассона-Абеля, но не суммируемые методом Чезаро.

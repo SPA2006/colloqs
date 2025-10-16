@@ -1,0 +1,71 @@
+\section{Теорема Мертенса}
+
+Рассмотрим ряды
+
+\begin{equation}
+	\displaystyle\sum_{k = 1}^\infty u_k \quad \mbox{и} \quad \displaystyle\sum_{k = 1}^\infty v_k,\quad u_k, v_k \in \mathbb{R}
+\end{equation}
+
+обозначим их $n$-е частичные суммы соответственно через $U_n$ и $V_n$.
+
+Введём специальное правило перемножения рядов по Коши
+
+\begin{equation}
+	\begin{gathered}
+		\left( \displaystyle\sum_{k = 1}^\infty u_k \right) \left( \displaystyle\sum_{k = 1}^\infty v_k \right) = u_1v_1 + (u_1v_2 + u_2v_1) + ... + (u_1v_k + u_kv_1) + ... = \displaystyle\sum_{k = 1}^\infty w_k \\
+		\mbox{где } w_k = u_1v_k + u_2v_{k - 1} + ... + u_kv_1
+	\end{gathered}
+\end{equation}
+
+\begin{theorem}
+	(\textbf{Мертенса}) Пусть ряды (38) сходятся  и хотя бы один из них сходится абсолютно. Тогда ряд, полученный перемножением этих рядов по правилу Коши (39), сходится к произведению сумм перемноженных рядов.
+\end{theorem}
+\textbf{Доказательство}
+
+Пусть, например, ряд $\sum u_k$ сходится абсолютно, а ряд $\sum v_k$ сходится (хотя бы условно). Обозначим $n$-е частичные суммы перемножаемых рядов соответственно через $U_n$ и $V_n$, а их суммы соответственно через $U$ и $V$. Положим $W = w_1 + w_2 + ... + w_n$ - это $n$-е частичные суммы ряда (39). Достаточно доказать, что $\displaystyle\lim_{n \rightarrow \infty} W_n = UV$.
+
+Так как ряд $\sum v_k$ сходится, а его остаток $\alpha_n = V - V_n$ - бесконечно малая, а следовательно, и ограниченая последовательность, то есть найдётся постоянная $M > 0$ такая, что $|\alpha_n| \leqslant M$ для всех номеров $n$. Преобразуем частичные суммы $W_n$ следующим образом
+
+\begin{equation*}
+	\begin{gathered}
+		W_n = u_1v_1 + (u_1v_2 + u_2v_1) + ... + (u_1v_n + u_2v_{n - 1} + ... + u_nv_1) = u_1V_n + u_2V_{n - 1} + ... u_nV_1 = \\
+		= u_1(V - \alpha_n) + u_2(V - \alpha_{n - 1}) + ... + u_n(V - \alpha_1) = U_nV - \beta_n \\
+		\mbox{где}\quad \beta_n = u_1\alpha_n + u_2\alpha_{n - 1} + ... + u_n\alpha_1
+	\end{gathered}
+\end{equation*}
+
+Поскольку $U_n \rightarrow U$ при $n \rightarrow \infty$, то достаточно доказать, что последовательность $\{\beta_n\}$ - бесконечно малая. Выпишем необходимые оценки. Зафиксируем произвольное положительное число $\varepsilon > 0$. Так как ряд $\sum u_k$ сходится, то последовательность его частичных сумм ограничена,
+
+\begin{equation}
+	\exists M_1 > 0 \colon \displaystyle\sum_{k = 1}^n |u_k| \leqslant M_1\quad \forall n \in \mathbb{N}
+\end{equation}
+
+и
+
+\begin{equation}
+	\exists m \in \mathbb{N}\colon \forall n > n_1 \quad |\alpha_n| < \frac{\varepsilon}{2M}
+\end{equation}
+
+Из того, что $\alpha_n \rightarrow 0$ при $n \rightarrow \infty$, заключаем, что
+
+\begin{equation}
+	\exists n_1 \in \mathbb{N}\colon \forall n > n_1 \quad |\alpha_n| < \frac{\varepsilon}{2M_1}
+\end{equation}
+
+Представим $\beta_n$ в следующем виде
+
+\begin{equation}
+	\beta_n = (u_1\alpha_n + ... + u_m\alpha_{n - m + 1}) + (u_{m + 1}\alpha_{n - m} + ... + u_n\alpha_1)
+\end{equation}
+
+Будем рассматривать номера $n$, удовлетворяющие условию $n - m > n_1$, то есть $n > m + n_1$. Применяя для слагаемых (43) в первой группе, заключённой в скобки оценку (42), затем оценку (40), а для слагаемых во второй группе - оценку $|\alpha_n| \leqslant M$, а затем оценку (41), получим
+
+\begin{equation*}
+	|\beta_n| < \frac{\varepsilon}{2M_1}\displaystyle\sum_{k = 1}^m |u_k| + M\displaystyle\sum_{k = m + 1}^n |u_k| < \frac{\varepsilon}{2M_1} \cdot M_1 + M\cdot \frac{\varepsilon}{2M} = \frac{\varepsilon}{2} + \frac{\varepsilon}{2} = \varepsilon\quad \forall n > N = m + n_1
+\end{equation*}
+
+то есть $\beta_n \rightarrow 0$ при $n \rightarrow \infty$.
+
+\begin{flushright}
+	$\blacksquare$
+\end{flushright}

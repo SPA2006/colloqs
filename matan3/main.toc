@@ -1,0 +1,17 @@
+\babel@toc {english}{}\relax 
+\babel@toc {russian}{}\relax 
+\contentsline {section}{\numberline {1}Понятие числового ряда. Критерий Коши. Необходимое и достаточное условие сходимости рядов с неотрицательными членами}{1}{section.0.1}%
+\contentsline {section}{\numberline {2}Признаки сравнения}{3}{section.0.2}%
+\contentsline {section}{\numberline {3}Признаки Даламбера и Коши, их сравнение}{5}{section.0.3}%
+\contentsline {section}{\numberline {4}Признак Коши-Маклорена}{10}{section.0.4}%
+\contentsline {section}{\numberline {5}Теорема Римана о перестановке членов в числовых рядах}{12}{section.0.5}%
+\contentsline {section}{\numberline {6}Теорема Коши о перестановке членов в числовых рядах}{14}{section.0.6}%
+\contentsline {section}{\numberline {7}Последовательности с ограниченным изменением и их свойства}{16}{section.0.7}%
+\contentsline {section}{\numberline {8}Признаки сходимости произвольных рядов (пр. Абеля)}{17}{section.0.8}%
+\contentsline {section}{\numberline {9}Теорема Мертенса}{19}{section.0.9}%
+\contentsline {section}{\numberline {10}Взаимосвязь между сходимостью четырёх рядов: повторных, двойного и одинарного}{21}{section.0.10}%
+\contentsline {section}{\numberline {11}Метод Чезаро суммирования расходящихся рядов}{27}{section.0.11}%
+\contentsline {section}{\numberline {12}Метод Пуассона-Абеля суммирования расходящихся рядов}{29}{section.0.12}%
+\contentsline {section}{\numberline {13}Бесконечные произведения и их свойства}{31}{section.0.13}%
+\contentsline {section}{\numberline {14}Последовательности с равномерно ограниченным изменением и их свойства}{33}{section.0.14}%
+\contentsline {section}{\numberline {15}Признаки Абеля равномерной сходимости функциональных рядов}{35}{section.0.15}%

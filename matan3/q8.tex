@@ -1,0 +1,137 @@
+\section{Признаки сходимости произвольных рядов (пр. Абеля)}
+
+В интегральном исчислении важную роль играет формула интегрирования по частям. Приведём аналог этой формулы для рядов.
+
+\begin{statm}
+	Пусть $\{u_k\}$ и $\{v_k\}$ - две произвольные последовательности, $S_n = u_1 + u_2 + ... + u_n, S_0 = u_0$, $n$ и $p$ - два произвольных номера. Тогда справедливо тождество
+	
+	\begin{equation}
+		\displaystyle\sum_{k = n}^{n + p} u_kv_k = \displaystyle\sum_{k = n}^{n + p - 1} S_k (v_k - v_{k + 1}) + S_{n + p}v_{n + p} - S_{n - 1}v_n
+	\end{equation}
+	
+	называется тождеством Абеля или преобразованием Абеля.
+	
+	Если переписать тождество (32) в виде
+	
+	\begin{equation*}
+		\displaystyle\sum_{k = n}^{n + p} v_k\Delta S_k = S_{n + p}v_{n + p} - S_{n - 1}v_n - \displaystyle\sum_{k = n}^{n + p -1} S_k\Delta v_k
+	\end{equation*}
+	
+	где $\Delta S_k = S_k - S_{k - 1} = u_k, \Delta v_k = v_{k + 1} - v_k$, то достаточно наглядно просматривается связь этого тождества и формулы интегрирования по частям для определённых интегралов.
+\end{statm}
+\textbf{Доказательство}
+
+Подставим в левую часть формулы (32)  вместо $u_k$ разность $u_k = S_k - S_{k - 1}$ и во второй из получаемых при этом заменим индекс суммирования $k$ и $k + 1$. Получим
+
+\begin{equation*}
+	\begin{gathered}
+		\displaystyle\sum_{k = n}^{n + p}u_kv_k = \displaystyle\sum_{k = n}^{n + p}S_kv_k - \displaystyle\sum_{k = n}^{n + p} S_{k -1}v_k = \displaystyle\sum_{k = n}^{n + p}S_kv_k - \displaystyle\sum_{k = n - 1}^{n + p - 1} S_k v_{k + 1} = \\
+		= S_{n + p}v_{n + p} + \displaystyle\sum_{k = n}^{n + p - 1}S_kv_k - \displaystyle\sum_{k = n}^{n + p - 1} S_kv_{k + 1} - S_{n - 1}v_n = \\
+		= \displaystyle\sum_{k = n}^{n + p - 1} S_k(v_k - v_{k + 1}) + S_{n + p}v_{n + p} - S_{n - 1}v_n
+	\end{gathered}
+\end{equation*}
+
+Откуда следует формула (32).
+
+\begin{flushright}
+	$\blacksquare$
+\end{flushright}
+
+Для применения критерия Коши сходимости числовых рядов тождество (32) удобно записать в следующем виде
+
+\begin{equation}
+	\displaystyle\sum_{k = n + 1}^{n + p} u_kv_k = \displaystyle\sum_{k = n + 1}^{n + p - 1} S_k(v_k - v_{k + 1}) + S_{n + p}v_{n + p} - S_nv_{n + 1},\quad p \neq 1
+\end{equation}
+
+А в случае $p = 1$ в правой части (33) первую сумму следует заменить нулём.
+
+\textbf{Признаки сходимости}
+
+Рассмотрим числовой ряд
+
+\begin{equation}
+	\displaystyle\sum_{k = 1}^\infty u_kv_k
+\end{equation}
+
+обозначим через $\{S_n\}$ последовательность частичных сумм ряда
+
+\begin{equation}
+	\displaystyle\sum_{k  = 1}^\infty u_k
+\end{equation}
+
+\begin{theorem}
+	(\textbf{два признака Абеля}) \begin{enumerate}
+		\item Пусть выполняются следующие условия
+		
+		\begin{enumerate}
+			\item последовательность $\{S_n\}$ является ограниченной
+			\item $\{v_k\}$ - бесконечно малая последовательность с ограниченным изменением
+			
+			Тогда ряд (34) сходится
+		\end{enumerate}
+		
+		\item Пусть выполняются следующие условия \begin{enumerate}
+			\item ряд (35) сходится
+			\item $\{v_k\}$ - последовательность с ограниченным изменением
+			
+			Тогда ряд (34) сходится
+		\end{enumerate}
+	\end{enumerate}
+\end{theorem}
+\textbf{Доказательство}
+
+\begin{enumerate}
+	\item Выпишем оценки, вытекающие из условий первого признака. По условию существует число $M > 0$ такое, что последовательность частичных сумм $\{S_n\}$ ряда (35) удовлетворяет условию $|S_n| \leqslant M$. Поскольку последовательность $v_k$ сходится к нулю и имеет ограниченное изменение, то
+	
+	\begin{equation}
+		\begin{gathered}
+			\forall\varepsilon > 0\ \exists N\colon \forall n \geqslant N \ \forall p \in \mathbb{N} \\
+			|v_n| < \frac{\varepsilon}{3M} \\
+			\displaystyle\sum_{k = n + 1}^{n + p} |v_{k + 1} - v_k| < \frac{\varepsilon}{3M}
+		\end{gathered}
+	\end{equation}
+	
+	Для доказательства сходимости ряда (34) воспользуемся критерием Коши и выписанными оценками. Применим тождество Абеля (33), от модуля суммы перейдём к сумме модулей, в каждом слагаемом оценим $|S_n| \leqslant M$ и используем оценки (36). При $n \geqslant N$
+	
+	\begin{equation*}
+		\begin{gathered}
+			\left| \displaystyle\sum_{k = n + 1}^{n + p}u_kv_k \right| \leqslant \left| \displaystyle\sum_{k = n + 1}^{n + p - 1}S_k(v_k - v_{k + 1}) \right| + |S_{n + p}v_{n + p}| + |S_nv_{n + 1}| \leqslant M\left( \displaystyle\sum_{k = n + 1}^{n + p - 1}|(v_k - v_{k + 1})| + |v_{n + p}| + |v_{n + 1}| \right) < \\
+			< M \left( \frac{\varepsilon}{3M} +  \frac{\varepsilon}{3M} + \frac{\varepsilon}{3M} \right) = \varepsilon
+		\end{gathered}
+	\end{equation*}
+	
+	Таким образом, ряд (34) сходится
+	
+	\item Выпишем оценки вытекающие из условий второго признаква. Так как ряд (35) сходится, то
+	
+	\begin{equation*}
+		\exists M > 0 \colon \{S_n\} \colon |S_n| \leqslant M
+	\end{equation*}
+	
+	Так как последовательность $\{v_k\}$ имеет ограниченное изменение, то
+	
+	\begin{equation*}
+		\forall \varepsilon > 0\ \exists N \colon \forall n \geqslant N \forall p \in \mathbb{N} \quad \displaystyle\sum_{k = n + 1}^{n + p} |v_{k + 1} - v_k| < \frac{\varepsilon}{3M}
+	\end{equation*}
+	
+	Обозначим сумму ряда (35) через $S$, а предел последовательности $\{v_k\}$ через $v$. Но тогда $S_{n + p}v_{n + p} - S_{n - 1}v_n \rightarrow Sv - Sv = 0$, $\exists N \colon \forall n \geqslant N \forall p \in \mathbb{N}$
+	
+	\begin{equation}
+		|S_{n + p}v_{n + p} - S_{n - 1}v_n| < \frac{2\varepsilon}{3}
+	\end{equation}
+	
+	Для доказательства сходимости ряда (34) также воспользуемся критерием Коши и выписанными оценками. Применим тождество Абеля (33), от модуля суммы перейдём к сумме модулей, в первом слагаемом оценим $|S_n| \leqslant M$, далее используем оценки (36, вторая часть), (37). При $n \geqslant N$
+	
+	\begin{equation*}
+		\begin{gathered}
+			\left| \displaystyle\sum_{k = n + 1}^{n + p} u_kv_k \right| \leqslant \left| \displaystyle\sum_{k = n + 1}^{n + p} S_k(v_k - v_{k + 1}) \right| + |S_{n + p}v_{n + p} - S_nv_{n + 1}| \leqslant \\
+			\leqslant M\left( \displaystyle\sum_{k = n + 1}^{n + p} |(v_k - v_{k + 1})| \right) + |S_{n + p}v_{n + p} - S_nv_{n + 1}| < M\frac{\varepsilon}{3M} + \frac{2\varepsilon}{3} = \varepsilon
+		\end{gathered}
+	\end{equation*}
+	
+	Таким образом, ряд (34) сходится.
+\end{enumerate}
+
+\begin{flushright}
+	$\blacksquare$
+\end{flushright}

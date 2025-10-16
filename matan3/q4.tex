@@ -1,0 +1,75 @@
+\section{Признак Коши-Маклорена}
+
+Признаки Коши и Даламбера не являются универсальными. Они, например, не могут сделать заключение о сходимости рядов
+
+\begin{equation*}
+	\displaystyle\sum_{k = 1}^\infty \frac{1}{k^\alpha},\quad \displaystyle\sum_{k = 2}^\infty \frac{1}{k\ln^\alpha k}
+\end{equation*}
+
+\begin{theorem}
+	(\textbf{теорема Коши-Маклорена}) Пусть функция $f(x)$ неотрицательна и не возрастает всюду на полупрямой $x \geqslant  1$. Тогда числовой ряд
+	
+	\begin{equation}
+		\displaystyle\sum_{k = 1}^\infty f(k) = f(1) + f(2) + ...
+	\end{equation}
+	
+	сходится тогда и только тогда, когда сходится числовая последовательность $\{a_n\}$:
+	
+	\begin{equation}
+		a_n = \displaystyle\int_{1}^n f(x)dx
+	\end{equation}
+\end{theorem}
+
+\textbf{Доказательство}
+
+Зафиксируем любой номер $k \geqslant 2$ и рассмотрим значения аргумента $x \in [k - 1, k]$. Так как функция $f(x)$ не возрастает на указанном отрезке, то справедливы неравенства
+
+\begin{equation}
+	f(k) \leqslant f(x) \leqslant f(k - 1)\ \forall x\in [k - 1, k]
+\end{equation}
+
+Из ограниченности и монотонности фнкции $f(x)$ на отрезке $[k - 1, k]$ следует, что она интегрируема на этом отрезке. Проинтегрируем неравенства (18)  по отрезку  $[k - 1, k]$, получим
+
+\begin{equation*}
+	\displaystyle\int_{k  -1}^k f(k)dx \leqslant \displaystyle\int_{k  -1}^k f(x)dx \leqslant \displaystyle\int_{k  -1}^k f(k - 1)dx
+\end{equation*}
+
+или
+
+\begin{equation*}
+	f(k) \leqslant \displaystyle\int_{k - 1}^k f(x)dx \leqslant f(k - 1)
+\end{equation*}
+
+Эти неравенства становлены для любого номера $k \geqslant 2$. Запишем их последовательно для значений $k$, равных $2, 3, ..., n$, где $n$ - любой номер, превосходящий $2$
+
+\begin{equation*}
+	\begin{gathered}
+		f(2) \leqslant \displaystyle\int_{1}^2  \leqslant  f(1) \\
+		f(3) \leqslant \displaystyle\int_{2}^3  \leqslant  f(2) \\
+		\cdots \cdots \\
+		f(n) \leqslant \displaystyle\int_{n -1}^n  \leqslant  f(n - 1)
+	\end{gathered}
+\end{equation*}
+
+Складывая почленно записанные неравенства, получим
+
+\begin{equation*}
+	\displaystyle\sum_{k = 2}^n f(k) \leqslant \displaystyle\int_1^n f(x)dx \leqslant \displaystyle\sum_{k = 1}^{n - 1} f(k)
+\end{equation*}
+
+или, обозначая $n$-ю частичную сумму ряда (16) через $S_n$
+
+\begin{equation}
+	S_n - f(1) \leqslant a_n \leqslant S_{n - 1}
+\end{equation}
+
+Из формулы (17) и неотрицательности функции $f(x)$ следует, что последовательность $\{a_n\}$ - неубывающая. Поэтому для сходимости этой последовательности необходима и достаточна её ограниченность. В свою очередь для сходимости ряда (16) в силу теоремы 2 необходима и достаточная ограниченность послдедовательности $\{S_n\}$. Из неравенств (19) вытекает, что последовательность $\{S_n\}$ ограничена тогда и только тогда, когда ограничена последовательность $\{a_n\}$, то есть тогда и только тогда, когда сходится последовательность $\{a_n\}$.
+
+\begin{flushright}
+	$\blacksquare$
+\end{flushright}
+
+\begin{note}
+	Зафиксируем произвольный номер $m$. Функцию $f(x)$ можно рассматривать не на $[1, \infty)$, а на полупрямой $[m, \infty)$. Утверждение теоремы 9 остаётся в силе, если заменить ряд (16) на {\small $\displaystyle\sum_{k = m}^\infty f(k)$}, а последовательность (17) на {\small $a_n = \displaystyle\int_m^n f(x)dx, n > m$}. Доказательство теоремы изменяется незначительно.
+\end{note}
+

@@ -1,0 +1,249 @@
+\section{Признаки Даламбера и Коши, их сравнение}
+
+\begin{theorem}
+	(\textbf{признак Коши}) \begin{enumerate}
+		\item Если для всех номеров $k$, с некоторого номера $k_0$, справедливо неравенство
+		
+		\begin{equation}
+			\sqrt[k]{p_k} \leqslant q < 1\quad (\sqrt[k]{p_k} \geqslant 1),\quad k \geqslant k_0 \geqslant 1
+		\end{equation}
+		
+		то ряд (3) сходится (расходится)
+		
+		\item Если существует предел
+		
+		\begin{equation}
+			\displaystyle\lim_{k\rightarrow \infty} \sqrt[k]{p_k} = L
+		\end{equation}
+		
+		то при $L < 1$ ряд сходится, а при $L > 1$ - расходится.
+	\end{enumerate}
+\end{theorem}
+
+\textbf{Доказательство}
+
+\begin{enumerate}
+	\item Возведём в $k$-ю степень обе части неравенства (8) $\sqrt[k]{p_k} \geqslant 1$, получим неравенство $p_k \geqslant 1, k \geqslant k_0$, то есть общий член ряда (3) не стремится к нулю при $k \rightarrow \infty$ и ряд расходится (нарушено необходимое условие сходимости ряда). Возведём в $k$-ю степень обе части первого неравенства (8) $\sqrt[k]{p_k} \leqslant q$, получим неравенство $p_k \leqslant q^k, k \geqslant k_0$. Поскольку ряд с общим членом $p_k' = q^k, 0 < q < 1$, сходится, то по первому признаку сравнения (теорема 3) ряд (3) сходится.
+	
+	\item Из существования предела (9) следует, что
+	
+	\begin{equation*}
+		\forall\varepsilon > 0\ \exists N\in \mathbb{N}: \forall k \geqslant N\ |\sqrt[k]{p_k} - L| < \varepsilon
+	\end{equation*}
+	
+	или 
+	
+	\begin{equation}
+		L - \varepsilon < \sqrt[k]{p_k} < L + \varepsilon
+	\end{equation}
+	
+	Если $L < 1$, то выбирая $\varepsilon$ так, что $L + \varepsilon < 1$, и обозначая $q = L + \varepsilon$, получаем из правого неравенства (10): $\sqrt[k]{p_k} < q < 1$, откуда, согласно первой части теоремы, заключаем, что ряд (3) сходится. Если $L > 1$, то выбирая $\varepsilon$ так, что $L - \varepsilon = 1$, получаем из левого неравенства (10): $\sqrt[k]{p_k} > 1$, из чего, согласно первой части теоремы, заключаем, что ряд (3) расходится. Заметим, что если $L = \infty$, то рассуждения аналогичны ($\sqrt[k]{p_k} > 1, k \geqslant k_0 \geqslant 1$). Теорема доказана.
+	\begin{flushright}
+		$\blacksquare$
+	\end{flushright}
+\end{enumerate}
+
+\begin{note}
+	По существу, строгое отделение от 1 в первом неравенстве (10) означает, что нельзя заменить это неравенство на $\sqrt[k]{p_k} < 1$. Достаточно заметить, что последнее  неравенство выполняется для каждого  из следующих рядов, из которых один сходится, а второй расходится: гармонический ряд, $p_k = \frac{1}{k}, \sqrt[k]{p_k} = \frac{1}{\sqrt[k]{k}} < 1, k > 1$ (ряд расходится) и обобщённый гармонический ряд, $p_k = \frac{1}{k^2}, \sqrt[k]{p_k} = \left( \frac{1}{\sqrt[k]{k}} \right)^2 < 1, k > 1$ (ряд сходится).
+\end{note}
+
+\begin{note}
+	Если в соотношении (9) $L = 1$, то признак не позволяет судить о поведении ряда. Действительно, для каждого из рядов, приведённых в первом замечании, справедливо $\sqrt[k]{p_k}\rightarrow 1, k\rightarrow\infty$, то есть $L = 1$, но один ряд сходится, а второй расходится.
+\end{note}
+
+\begin{theorem}
+	(\textbf{признак Даламбера}) Рассмотрим ряд (3), все члены которогоначиная с некоторого номера $k_0 \geqslant 1$ отличны от нуля.
+	
+	\begin{enumerate}
+		\item Если для всех номеров $k$ начиная с некоторого номера $k_0$ справедливо неравенство
+		
+		\begin{equation}
+			\frac{p_{k + 1}}{p_k} \leqslant q < 1 \quad \left( \frac{p_{k + 1}}{p_k} \geqslant 1 \right), \quad k \geqslant k_0 \geqslant 1
+		\end{equation}
+		
+		то ряд (3) сходится (расходится).
+		
+		\item Если существует предел
+		
+		\begin{equation}
+			\displaystyle\lim_{k \rightarrow \infty} \frac{p_{k + 1}}{p_k} = L
+		\end{equation}
+		
+		то при $L < 1$ ряд (3) сходится, а при $L > 1$ расходится.
+	\end{enumerate}
+\end{theorem}
+
+\textbf{Доказательство}
+
+\begin{enumerate}
+	\item Если выполняется второе неравенство (11), $\frac{p_{k + 1}}{p_k} \geqslant 1$, или $p_{k + 1} \geqslant p_k > 0$, то общий член ряда (3) не стремится к нулю, нарушено необходимое условие сходимости ряда. Если выполняется первое неравенство (11), то представив $q = \frac{q^{k + 1}}{q^k}$, получим неравенство
+	
+	\begin{equation*}
+		\frac{p_{k + 1}}{p_k} \leqslant \frac{q^{k + 1}}{q^k}
+	\end{equation*}
+	
+	Поскольку ряд с общим членом $p_k' = q^k, 0 < q < 1$, сходится, то третий признак сравнения
+	
+	\setcounter{theorem}{5}
+	\begin{theorem}
+		(\textbf{третий признак сравнения}) Пусть начиная с некоторого номера $k_0$ все члены каждого из рядов (3), (4) строго положительны и выполняется неравенство
+		
+		\begin{equation}
+			\frac{p_{k + 1}}{p_k} \leqslant \frac{p_{k+1}'}{p_k'}, \qquad k \geqslant k_0 > 0
+		\end{equation}
+		
+		Тогда справедливы утверждения теоремы (3) (\textbf{первого признака сравнения}).
+	\end{theorem}
+	\setcounter{theorem}{8}
+	
+	позволяет утверждать, что ряд (1) сходится.
+	
+	\item Для доказательства второй части теоремы следует дословно повторить схему доказательства второй части теоремы (7) (признака Коши), заменив $\sqrt[k]{p_k}$ на {\small $\frac{p_{k + 1}}{p_k}$ }. Теорема доказана. 
+	
+	\begin{flushright}
+		$\blacksquare$
+	\end{flushright}
+\end{enumerate}
+
+\setcounter{note}{0}
+
+\begin{note}
+	Неравенство (11) нельзя заменить на  $\frac{p_{k + 1}}{p_k} < 1$.
+\end{note}
+
+\begin{note}
+	Если в соотношении (11) $L = 1$, то признак не позволяет судить о поведении ряда.
+\end{note}
+
+\textbf{Сравнение признаков Даламбера и Коши}
+
+\begin{definition}
+	Говорят,  что первый признак - более сильный, чем второй, если всякий раз, когда применим второй признак, применим и первый (даёт тот же самый результат), но есть ряды, для которых первый признак применим, а второй - нет.
+\end{definition}
+
+\begin{statm}
+	Если существует предел (12), то существует и предел (9) (и они равны между собой). Обратное неверно.
+\end{statm}
+
+Для того чтобы доказать, что из существования предела (9) не следует существования предела (12), достаточно привести пример такого ряда.
+
+Рассмотрим следующий ряд с положительными членами
+
+\begin{equation}
+	\displaystyle\sum_{k = 1}^\infty \frac{3 + (-1)^k}{2^k}
+\end{equation}
+
+Заметим, что последовательность {\small $\frac{p_{k + 1}}{p_k} = \frac{1}{2} \cdot \frac{3 + (-1)^{k + 1}}{3 + (-1)^k}$} имеет две предельные точки: $1$ и $\frac{1}{4}$ и потому не имеет предела, то есть признак Даламбера неприменим для исследования ряда (13) на сходимость (первая часть признака "не работает", поскольку справедливо лишь неравенство {\small $\frac{p_{k + 1}}{p_k} \leqslant 1$}). Вместе с тем, существует и предел (9): $\displaystyle\lim_{k \rightarrow \infty} \sqrt[k]{p_k} = \frac{1}{2} = L < 1$, то есть признак Коши применим и даёт нам сходимость ряда (13). Вторая часть утверждения доказана.
+
+Для того чтобы доказать первую часть утверждения сформулируем два леммы о свойствах средних арифметических и средних геометрических последовательностях.
+
+\begin{lemm}
+	Если последовательность $\{a_n\}, a_n \in \mathbb{R}$, сходится, то к тому же пределу сходится и последовательность средних арифметических этих чисел.
+\end{lemm}
+
+\textbf{Доказательство}
+
+\begin{enumerate}
+	\item Пусть предел $a = 0$. Последовательность $\{a_n\}$ ограниченная, поэтому $\exists c =const > 0: |a_n| \leqslant c \forall n$. С другой стороны,
+	
+	\begin{equation*}
+		\forall\varepsilon > 0\ \exists N\in\mathbb{N}: \forall n \geqslant N\ |a_n| < \frac{\varepsilon}{2}
+	\end{equation*}
+	
+	Используем эти две оценки. Найдём номер  $N_1$ такой, что справедлива оценка {\small $\frac{cN}{n} < \frac{\varepsilon}{2}$} для всех номеров $n > N_1$, и рассмотрим номера $n > \max{N, N_1}$. Тогда
+	
+	\begin{equation*}
+		\begin{gathered}
+			\left| \frac{a_1 + a_2 + ... + a_n}{n} \right| = \left| \frac{a_1 + a_2 + ... + a_N}{n} + \frac{a_{N + 1} + a_{N + 2} + ... + a_n}{n} \right| < \\
+			< \frac{cN}{n} + \frac{\varepsilon}{2} \cdot \frac{n - N}{n} < \frac{\varepsilon}{2} + \frac{\varepsilon}{2} = \varepsilon
+		\end{gathered}
+	\end{equation*}
+	
+	то есть
+	
+	\begin{equation*}
+		\frac{a_1 + a_2 + ... + a_n}{n} \rightarrow 0,\quad n\rightarrow \infty
+	\end{equation*}
+	
+	\item Пусть теперь предел $A \neq 0, a$ - некоторое конечное число. Тогда последовательность $\{a_n - a\}$ стремится к нулю и рассматриваемый случай приводится к предыдущему случаю
+	
+	\begin{equation*}
+		\frac{a_1 + a_2 + ... + a_n}{n}  - a = \frac{(a_1 - a) + (a_2 - a) + ... + (a_n - a)}{n} \rightarrow 0\quad n \rightarrow \infty
+	\end{equation*}
+	
+	то есть
+	
+	\begin{equation*}
+		\frac{a_1 + a_2 + ... + a_n}{n}  \rightarrow a,\quad n\rightarrow \infty
+	\end{equation*}
+	
+	\item Рассмотрим случай $a = + \infty$ (случай $a = - \infty$ рассматривается аналогично). Обозначим через $c$ такое положительное число, что $a_n > -c$ для всех номеров $n$. По определению бесконечно большой положительной последовательности можно записать, что $\forall A > 0\ \exists N \in \mathbb{N}\ a_n > A$. Пусть $n > 2N$, тогда $\frac{N}{n} < \frac{1}{2}, -\frac{N}{n} > -\frac{1}{2}$, и для арифметических получим
+	
+	\begin{equation*}
+		\begin{gathered}
+			\frac{a_1 + a_2 + ... + a_n}{n} = \frac{a_1 + a_2 + ... + a_N}{n} + \frac{a_{N + 1} + a_{N + 2} + ... + a_n}{n} > -\frac{cN}{n} + \frac{A(n - N)}{n} > \\
+			> -\frac{c}{2} + A(1 - \frac{1}{2}) = \frac{A - c}{2}\quad \forall n > 2N
+		\end{gathered}
+	\end{equation*}
+	
+	Так как $A$ - сколь угодно большое число, то и {\small $\frac{A - \varepsilon}{2}$} - сколь угодно большое число, а это означает, что
+	
+	\begin{equation*}
+		\frac{a_1 + a_2 + ... + a_n}{n} \rightarrow \infty,\quad n \rightarrow \infty
+	\end{equation*}
+	
+	\begin{flushright}
+		$\blacksquare$
+	\end{flushright}
+\end{enumerate}
+
+\begin{lemm}
+	Если последовательность положительных чисел $\{a_n\}$ сходится к пределу $a$, то к этому же пределу сходится и последовательность средних геометрических этих чисел
+	
+	\begin{equation}
+		\tau_n = \sqrt[n]{a_1a_2\cdots a_n}
+	\end{equation}
+\end{lemm}
+
+\textbf{Доказательство}
+
+Рассмотрим два возможных случая: 1) $a > 0,$ 2) $a = 0$. В случае 1 в силу непрерывности логарифмической функции для всех положительных значений аргумента справедливо $\displaystyle\lim_{n \rightarrow \infty} = \ln a$. Но тогда в силу леммы 1 существует также равный $\ln a$ предел последовательности
+
+\begin{equation*}
+	\ln \tau_n = \ln \sqrt[n]{a_1\cdot a_2 \cdots a_n} = \frac{\ln a_1 + \ln a_1 + ... + \ln a_n}{n}
+\end{equation*}
+
+В силу непрерывности показательной функции заключаем, что существует равный $a$ предел последовательности (15).
+
+В силу непрерывности показательной функции заключаем, что существует равный $a$ предел последовательности (15).
+
+В случае (2) требуется доказать, что последовательность (15) - бесконечно малая. Выпишем две оценки
+
+\begin{equation*}
+	\begin{gathered}
+		\exists c = const > 0: a_n > c\ \forall n \\
+		\forall \varepsilon > 0\ \exists N\in \mathbb{N}: \forall n \geqslant N\quad a_n < \varepsilon
+	\end{gathered}
+\end{equation*}
+
+Пусть $n > N$ и применим оценки
+
+\begin{equation*}
+	\tau_n = \sqrt[n]{a_1\cdot a_2 \cdots a_N} \cdot \sqrt[n]{a_{N + 1} \cdots a_n} < \sqrt[n]{c^N}\sqrt[n]{\varepsilon^{n - N}} = \varepsilon\sqrt[n]{\left( \frac{c}{\varepsilon} \right)^ N} < 2\varepsilon
+\end{equation*}
+
+где последняя оценка получена при $n > N_1(\varepsilon)$. Мы воспользовались тем, что $\displaystyle\lim_{n \rightarrow \infty}\sqrt[n]{\left( \frac{c}{\varepsilon} \right)^N} = 1$.
+
+\begin{flushright}
+	$\blacksquare$
+\end{flushright}
+
+Доказательство утверждения. Для доказательства того, что из существования равного $L$ предела  $\displaystyle\lim_{k \rightarrow \infty} \frac{p_{k + 1}}{p_k}$ вытекает существование предела $\displaystyle\lim_{k \rightarrow \infty} \sqrt[k]{p_k}$, также равного $L$, достаточно применить лемму 2. Рассмотрим последовательность $a_1 = p_1, a_2 = \frac{p_2}{p_1}, ..., a_k = \frac{p_k}{p_{k - 1}}$. Очевидно, $a_k \rightarrow L, k\rightarrow \infty$. Но тогда
+
+\begin{equation*}
+	\sqrt[k]{p_k} = \sqrt[k]{\cdot \frac{p_k}{p_{k - 1}} \frac{p_{k - 1}}{p_{k - 2}} \cdots \frac{p_2}{p_1} \cdot p_1} = \sqrt[k]{a_k \cdot a_{k - 1} \cdots a_2 \cdot  a_1} \rightarrow L,\quad k \rightarrow \infty
+\end{equation*}
+
+\begin{flushright}
+	$\blacksquare$
+\end{flushright}

@@ -1,0 +1,56 @@
+\section{Теорема Коши о перестановке членов в числовых рядах}
+
+Докажем, что для всякого абсолютно  сходящегося ряда справделиво переместительное свойство.
+
+\begin{theorem}
+	(\textbf{теорема Коши}). Если данный ряд сходится абсолютно, то любой ряд, полученный из данного ряда посредством некоторой перестановки членов, также сходится  абсолютно и имеет ту же сумму, что и данный ряд.
+\end{theorem}
+\textbf{Доказательство}
+
+Пусть ряд (20) с общим членом $u_k$ сходится абсолютно и сумма этого ряда равна $S$.  Пусть далее
+
+\begin{equation}
+	\displaystyle\sum_{k = 1}^\infty u_k'
+\end{equation}
+
+- ряд, полученный из ряда (20) посредством некоторой переставноки его членов. Требуется доказать, что
+
+\begin{enumerate}
+	\item ряд (27) сходится и имеет сумму, равную $S$
+	\item ряд (27) сходится абсолютно
+\end{enumerate}
+
+Докажем сначала первое утверждение. Достаточно доказать, что
+
+\begin{equation}
+	\forall\varepsilon > 0\ \exists N\in\mathbb{N}: \forall n \geqslant N \quad \left| \displaystyle\sum_{k = 1}^n u_k' - S \right| < \varepsilon
+\end{equation}
+
+Зафиксируем произвольное число $\varepsilon > 0$. Так как ряд (20) сходится абсолютно, то для выбранного $\varepsilon$ можно указать номер $N_0$ такой, что для остатка ряда из модулей справедлива оценка
+
+\begin{equation}
+	\displaystyle\sum_{k = N_0 + 1}^\infty |u_k| < \frac{\varepsilon}{2}
+\end{equation}
+
+Выберем столь большой номер $N$, чтобы любая частичная сумма $S_n'$ нового ряда (27) с номером $n > N$, содержала все первые $N_0$ членов ряда (20). Такой номер $N$ выбрать можно, так как ряд (27) получается из ряда (20) посредством некоторой перестановки членов. Тогда разность $S_n'$ с $n > N$ и первых $N_0$ слагаемых ряда (20) содердит только слагаемые ряда (20) с номерами, большими, чем $N_0$. Для установления оценки (28) добавим и вычтем под знаком модуля сумму первых $N_0$ членов ряда (20) и два раза применим оценку (29). Получим
+
+\begin{equation*}
+	\begin{gathered}
+		\left| \displaystyle\sum_{k = 1}^n u_k' - S \right| = \left| \left( \displaystyle\sum_{k = 1}^n u_k' - \displaystyle\sum_{k = 1}^{N_0} u_k \right) + \left( \displaystyle\sum_{k = 1}^{N_0} u_k - S \right) \right| \leqslant \left| \displaystyle\sum_{k = 1}^n u_k' - \displaystyle\sum_{k = 1}^{N_0} u_k \right| + \left| \displaystyle\sum_{k = 1}^{N_0} u_k - S \right| \leqslant \\
+		\leqslant \displaystyle\sum_{k = N_0 + 1}^\infty |u_k| + \displaystyle\sum_{k = N_0 + 1}^\infty |u_k| < \frac{\varepsilon}{2} + \frac{\varepsilon}{2} = \varepsilon
+	\end{gathered}
+\end{equation*}
+
+Соотношение(28) доказано, то есть ряд (20) сходится и имеет сумму, равную $S$.
+
+Остаётся доказать утверждение, что ряд (27) сходится абсолютно. Доказательство следует из предыдущего утверждения, если применить его к рядам
+
+\begin{equation}
+	\displaystyle\sum_{k = 1}^\infty |u_k|\quad \mbox{и} \quad \displaystyle\sum_{k = 1}^\infty |u_k'|
+\end{equation}
+
+При этом мы докажем сходимость второго из рядов (30), то есть абсолютную сходимость ряда (27) (и докажем равенство сумм рядов (30)).
+
+\begin{flushright}
+	$\blacksquare$
+\end{flushright}

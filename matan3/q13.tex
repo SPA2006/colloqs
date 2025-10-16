@@ -1,0 +1,136 @@
+\section{Бесконечные произведения и их свойства}
+
+К понятию числового ряда близко примыкает понятие бесконечного произведения. Пусть дана бесконечная числовая последовательность $\{v_k\}$. Перемножим её элементы. 
+
+\begin{definition}
+	Формально записанное выражение
+	
+	\begin{equation}
+		v_1 \cdot v_2 \cdots v_k \cdots = \displaystyle\prod_{k = 1}^\infty v_k
+	\end{equation}
+	
+	называется бесконечным произведением.
+\end{definition}
+
+\begin{definition}
+	Элементы $v_k$ называются членами бесконечного произведения.
+\end{definition}
+ 
+ Произведение первых $n$ членов данного бесконечного произведения обозначим через $P_n$ и назовём $n$-м частичным произведением
+ 
+ \begin{equation*}
+ 	P_n = v_1 \cdot v_2 \cdots v_n = \displaystyle\prod_{k = 1}^n v_k
+ \end{equation*}
+ 
+ \begin{definition}
+ 	Бесконечное произведение (62) называется сходящимся, если последовательность его частичных произведений $\{P_n\}$ имеет конечный предел $P$, отличный от нуля.
+ \end{definition}
+ 
+ В случае сходимости указанный предел $P$ называют значением бесконечного произведения и записывают
+ 
+ \begin{equation*}
+ 	P = \displaystyle\prod_{k = 1}^\infty v_k
+ \end{equation*}
+ 
+ По соглашению, ряд, у которого хотя бы один член равен нулю, будем считать расходящимся.
+ 
+ \begin{theorem}
+ 	(\textbf{необходимое условие сходимости бесконечного произведения}) Если бесконечное произведение (62) сходится, то $v_k \rightarrow 1$ при $k \rightarrow \infty$.
+ \end{theorem}
+ \textbf{Доказательство}
+ 
+ Пусть бесконечное произведение (62) сходится и имеет значение $P$, отличное от нуля. Тогда $\displaystyle\lim_{k \rightarrow \infty} P_{k - 1} = \displaystyle\lim_{k \rightarrow \infty} P_k = P \neq 0$. Поскольку $v_k = \frac{P_k}{P_{k - 1}}$, то существует предел $\displaystyle\lim_{k \rightarrow \infty} v_k = \frac{P}{P} = 1$.
+ 
+ \begin{flushright}
+ 	$\blacksquare$
+ \end{flushright}
+ 
+ \textbf{Пример}
+ 
+ Найти значение бесконечного произведения
+ 
+ \begin{equation}
+ 	\displaystyle\prod_{k = 1}^\infty \cos\frac{x}{2^k} = \cos\frac{x}{2} \cos\frac{x}{4} \cdots \cos\frac{x}{2^k} \cdots
+ \end{equation}
+ 
+ где $x \in \mathbb{R}$ - любое фиксированное число.
+ 
+ Заметим, что для бесконечного произведения (63) выполнено необходимое условие сходимости. Если $x = 0$, то $\cos\frac{x}{2^k} = 1$ для всех номеров $k$ и значение произведения $P = 1$. Зафиксируем любое значение $x \neq 0$. Посчитаем $n$-е частичное произведение
+ 
+\begin{equation}
+	P_n = \cos\frac{x}{2} \cos\frac{x}{4} \cdots \cos\frac{x}{2^n}
+\end{equation}
+
+Рассмотрим $n >> 1 \colon \sin \frac{x}{2^n} \neq 0$, домножим на $\sin \frac{x}{2^n}$ и используем тригонометрическую формулу $\sin y \cos y = \frac{1}{2}\sin 2y$. В результате получим
+
+\begin{equation*}
+	P_n = \frac{\sin x}{2^n \sin\frac{x}{2^n}} = \frac{\sin x}{x} \cdot \frac{\frac{x}{2^n}}{\sin \frac{x}{2^n}} \rightarrow \frac{\sin x}{x}\quad \mbox{при} \quad n \rightarrow \infty
+\end{equation*}
+
+$\sin x = 0 | x = \pi k, k \in \mathbb{Z}\ =>\ x\neq \pi k, k\in \mathbb{Z}$
+
+\begin{equation}
+	\displaystyle\prod_{k = 1}^\infty \cos\frac{x}{2^k} = \frac{\sin x}{x}
+\end{equation}
+
+Доопределив равенство (65) в точке $x = 0$ нулём, получаем, что равенство (65) верно и для $x = 0$.
+
+В точках $x = \pi k, k \in \mathbb{Z}, k \neq 0$ равенство (65) тоже верно, так как обе его части обращаются в нуль.
+
+\textbf{Критерии сходимости бесконечных проивзедений}
+
+\begin{theorem}
+	Для того чтобы бесконечное проивзедение (62) с положительными членами сходилось, необходимо и достаточно, чтобы сходился ряд
+	
+	\begin{equation}
+		\displaystyle\sum_{k = 1}^\infty \ln v_k
+	\end{equation}
+	
+	В случае сходимости значение $P$ произведения (62) и сумма ряда (66) связаны формулой $P = e^S$.
+\end{theorem}
+\textbf{Доказательство}
+
+Обозначим $n$-е частичное произведение бесконечного произведения (62) через $P_n$, а $n$-ю частичную сумму ряда (66) - через $S_n$. Тогда
+
+\begin{equation*}
+	S_n = \displaystyle\sum_{k = 1}^n \ln v_k = \ln\displaystyle\prod_{k = 1}^n v_k = \ln P_n,\quad P_n = e^{S_n}
+\end{equation*}
+
+В силу непрерывности: $P_n$ сходится $\iff$ сходится $S_n$, причём если $\displaystyle\lim_{n \rightarrow \infty} S_n = S$, то $\displaystyle\lim_{n \rightarrow \infty} P_n = e^S$.
+
+\begin{flushright}
+	$\blacksquare$
+\end{flushright}
+
+При исследовании на сходимость бесконечного произведения на сходимость оказывается удобным представить это бесконечное произведение в виде
+
+\begin{equation}
+	\displaystyle\prod_{k = 1}^\infty (1 + u_k) = (1 + u_1)(1 + u_2)...(1 + u_k)...
+\end{equation}
+
+При этом его сходимость эквивалентна сходимости ряда
+
+\begin{equation}
+	\displaystyle\sum_{k = 1}^\infty \ln(1 + u_k)
+\end{equation}
+
+\begin{theorem}
+	Если все $u_k$ начиная с некоторого номера $k_0 \geqslant 1$ сохранают один и тот же знак, то для сходимости бесконечного произведения (67) необходимо и достаточно, чтобы сходился ряд
+	
+	\begin{equation}
+		\displaystyle\sum_{k = 1}^\infty u_k
+	\end{equation}
+\end{theorem}
+\textbf{Доказательство}
+
+Условие $\displaystyle\lim_{k \rightarrow \infty} u_k = 0$ является необходимым как для сходимости ряда (69), так и для сходимости ряда (67). Поэтому будем считать это условие выполненным и при доказательстве необходимости, и при доказательстве достаточности. Но из этого условия и из асимптотической формулы $\ln (1 + y) = y + o(1)$ при $y \rightarrow 0$ вытекает, что
+
+\begin{equation}
+	\displaystyle\lim_{k \rightarrow \infty} \frac{\ln (1 + u_k)}{u_k} = \displaystyle\lim_{k \rightarrow \infty} \frac{u_k + o(u_k)}{u_k} = \displaystyle\lim_{k \rightarrow \infty} (1 + o(1)) = 1
+\end{equation}
+
+Поскольку по условию теоремы все члены рядов (68), (69) начиная с некоторого номера $k_0$ сохраняют один и тот же знак, то для их сходимости мы можем воспользоваться признаками сравнения. По второму признаку сравнения из соотношения (70) следует, что ряд (69) сходится тогда и только тогда, когда сходится ряд (68).
+
+\begin{flushright}
+	$\blacksquare$
+\end{flushright}
